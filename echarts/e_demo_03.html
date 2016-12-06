@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <!-- 这里引入的echarts是最新的版本 -->
-<!-- 理解datas，lineks的测试代码 -->
+<!-- 对links的探索 -->
 <html>
 <head>
     <meta charset="utf-8">
-    <title>ECharts_demo_02</title>
+    <title>ECharts_demo_03</title>
     <!-- 引入 echarts.js --><!-- D:/workstation/repositories/dataVisualizing/echarts/ -->
     <script src="echarts.min.js"></script><!-- 当前目录下引入文件 -->
 </head>
@@ -15,26 +15,6 @@
     <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
         var myChart = echarts.init(document.getElementById('main'));
-
-        // 指定图表的配置项和数据
-        /*var option = {
-            title: {
-                text: 'ECharts 入门示例'
-            },
-            tooltip: {},
-            legend: {
-                data:['销量']
-            },
-            xAxis: {
-                data: ["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"]
-            },
-            yAxis: {},
-            series: [{
-                name: '销量',
-                type: 'bar',
-                data: [5, 20, 36, 10, 10, 20]
-            }]
-        };*/
 
         // 
         option = {
@@ -57,8 +37,8 @@
                     color: ['#d87c7c','#919e8b', '#d7ab82',  '#6e7074','#61a0a8','#efa18d', '#787464', '#cc7e63', '#724e58', '#4b565b'],
                     type: 'sankey',
                     layout: 'none',
-                    data: [{"name":"Marianne","value":"30","type":"now","itemStyle":{"normal":{"color":"#D40404"}},"label":{"normal":{"position":"right"}}},{"name":"Beauty","index":0,"type":"past","itemStyle":{"normal":{"color":"#DEE551"}},"label":{"normal":{"position":"right"}}},{"name":"Kindness","index":1,"type":"past","itemStyle":{"normal":{"color":"#DEE551"}},"label":{"normal":{"position":"right"}}}],
-                    links: [{"source":"Beauty","target":"Marianne","value":"20","lineStyle":{"normal":{"color":null,"opacity":0.05}}},{"source":"Kindness","target":"Marianne","value":"10","lineStyle":{"normal":{"color":null,"opacity":0.05}}}],
+                    data: [{"name":"A","value":"40","type":"种子轮","itemStyle":{"normal":{"color":"#D40404"}},"label":{"normal":{"position":"right"}}},{"name":"B","value":"20","type":"种子轮","itemStyle":{"normal":{"color":"#D40404"}},"label":{"normal":{"position":"right"}}},{"name":"C","value":"30","type":"A轮","itemStyle":{"normal":{"color":"#DEE551"}},"label":{"normal":{"position":"right"}}},{"name":"AA","type":"A轮","itemStyle":{"normal":{"color":"#DEE551"}},"label":{"normal":{"position":"right"}}},{"name":"D","type":"B轮","itemStyle":{"normal":{"color":"#DEE551"}},"label":{"normal":{"position":"right"}}}],
+                    links: [{"source":"A","target":"C","value":"20","lineStyle":{"normal":{"color":null,"opacity":0.05}}},{"source":"B","target":"C","value":"10","lineStyle":{"normal":{"color":"#DEE551","opacity":0.05}}},{"source":"C","target":"D","value":"20","lineStyle":{"normal":{"color":"#DEE551","opacity":0.05}}},{"source":"B","target":"AA","value":"10","lineStyle":{"normal":{"color":"#DEE551","opacity":0.05}}},{"source":"A","target":"AA","value":"10","lineStyle":{"normal":{"color":"#DEE551","opacity":0.05}}}],
                     itemStyle: {
                         normal: {
                             borderWidth: 2,
